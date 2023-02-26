@@ -41,3 +41,26 @@ export function decodeForm(s){
     let gender = arr[5] === '0'?'':(', '+arr[5])
     return(tense+person+number+gender)
 }
+
+const PRESENT = []
+for (let i = 4; i<=10; i += 2){
+    PRESENT.push(i)
+}
+
+const PAST = []
+for (let i = 12; i<=28; i += 2){
+    PAST.push(i)
+}
+
+const FUTURE = []
+for (let i = 30; i<=46; i += 2){
+    FUTURE.push(i)
+}
+
+const IMPERATIVE = []
+for (let i = 50; i<=54; i += 2){
+    IMPERATIVE.push(i)
+}
+
+export {PRESENT, PAST, FUTURE, IMPERATIVE}
+

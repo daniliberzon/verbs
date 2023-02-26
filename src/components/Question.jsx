@@ -27,7 +27,7 @@ function Question(props) {
             })}
         </div>
         <div className='question'>Type form: {decodeForm(props.columns[props.form][1])}</div>
-        <input className='answerInput' id='answerInput' dir='rtl' onChange={handleChange} value={props.answer}></input>
+        <input className='answerInput' id='answerInput' dir='rtl' onChange={handleChange} value={props.answer} autocomplete='off'></input>
         <div className='submitButton'>Submit</div>
     </div>
   )
