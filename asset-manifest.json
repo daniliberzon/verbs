@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/verbs/static/css/main.9ec057f2.css",
-    "main.js": "/verbs/static/js/main.85c0dfbc.js",
-    "static/media/data.csv": "/verbs/static/media/data.0f28ad52e8190bac677b.csv",
-    "static/media/columns.csv": "/verbs/static/media/columns.4ce591bdd9b63dae1d00.csv",
+    "main.js": "/verbs/static/js/main.7335c535.js",
+    "static/media/data.csv": "/verbs/static/media/data.27b4f01cc2519b841d55.csv",
+    "static/media/columns.csv": "/verbs/static/media/columns.ad3fc76034fdd04336ae.csv",
     "index.html": "/verbs/index.html",
     "main.9ec057f2.css.map": "/verbs/static/css/main.9ec057f2.css.map",
-    "main.85c0dfbc.js.map": "/verbs/static/js/main.85c0dfbc.js.map"
+    "main.7335c535.js.map": "/verbs/static/js/main.7335c535.js.map"
   },
   "entrypoints": [
     "static/css/main.9ec057f2.css",
-    "static/js/main.85c0dfbc.js"
+    "static/js/main.7335c535.js"
   ]
 }
