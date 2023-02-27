@@ -24,7 +24,7 @@ function Quiz(props) {
     setForm(frm)
     setAnswer('')
     setChosen(-1)
-    if (props.data[question][form] === ''){
+    if (props.data[qstn][frm] === ''){
       getNewQuestion()
     }
   }
