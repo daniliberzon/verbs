@@ -27,7 +27,6 @@ function Answer(props) {
         <div>{yourAnswer}</div>
         <a href={props.data[props.rightAnswer][1]} className='externalLink' target="_blank" rel="noopener noreferrer">more information</a>
         <div className='submitButton' id='nextButton' onClick={handleClick}>next</div>
-        <div>{rightForm}</div>
     </div>
   )
 }
