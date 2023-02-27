@@ -18,47 +18,47 @@ export function shuffle(arr){
 
 export function decodeForm(s){
     let arr = s.split('/')
-    let tense = arr[2]+','
+    let tense = arr[0]+','
+    let number = ' '+arr[1]
     let person
-    switch (arr[3]) {
+    switch (arr[2]) {
         case '0':
             person = ''
             break;
         case '1':
-            person = ' first person,'
+            person = ', first person'
             break;
         case '2':
-            person = ' second person,'
+            person = ', second person'
             break;
         case '3':
-            person = ' third person,'
+            person = ', third person'
             break;
         default:
             person = ''
             break;
     }
-    let number = ' '+arr[4]
-    let gender = arr[5] === '0'?'':(', '+arr[5])
-    return(tense+person+number+gender)
+    let gender = arr[3] === '0'?'':(', '+arr[3])
+    return(tense+number+person+gender)
 }
 
 const PRESENT = []
-for (let i = 4; i<=10; i += 2){
+for (let i = 4; i<=7; i++){
     PRESENT.push(i)
 }
 
 const PAST = []
-for (let i = 12; i<=28; i += 2){
+for (let i = 8; i<=16; i++){
     PAST.push(i)
 }
 
 const FUTURE = []
-for (let i = 30; i<=46; i += 2){
+for (let i = 17; i<=25; i++){
     FUTURE.push(i)
 }
 
 const IMPERATIVE = []
-for (let i = 50; i<=54; i += 2){
+for (let i = 27; i<=29; i ++){
     IMPERATIVE.push(i)
 }
 

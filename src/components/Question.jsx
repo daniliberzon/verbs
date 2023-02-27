@@ -16,7 +16,7 @@ function Question(props) {
 
   return (
     <div onClick={handleClick}>
-      <p className='verb'>{props.data[props.rightAnswer][59]}</p>
+      <p className='verb'>{props.data[props.rightAnswer][31]}</p>
         <div className='questionOptions'>
             <div className='question'>Choose translation:</div>
             {props.options.map((x) =>{

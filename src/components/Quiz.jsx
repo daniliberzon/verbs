@@ -17,7 +17,6 @@ function Quiz(props) {
   function getNewQuestion(){
     let ops = getRandomN(4, 0, props.data.length-1)
     const qstn =ops[0]
-    // const frm = Math.floor(getRandomN(1, 4, 57)/2)*2
     const frm = variants[getRandomN(1, 0, variants.length-1)]
     shuffle(ops)
     setOptions(ops)
