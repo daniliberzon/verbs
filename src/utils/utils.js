@@ -53,7 +53,10 @@ for (let i = 8; i<=16; i++){
 }
 
 const FUTURE = []
-for (let i = 17; i<=25; i++){
+for (let i = 17; i<=21; i++){
+    FUTURE.push(i)
+}
+for (let i = 23; i<=25; i++){
     FUTURE.push(i)
 }
 
