@@ -65,5 +65,8 @@ for (let i = 27; i<=29; i ++){
     IMPERATIVE.push(i)
 }
 
-export {PRESENT, PAST, FUTURE, IMPERATIVE}
+
+export const tensesForms = {'Past': PAST,'Present':PRESENT, 'Future':FUTURE, 'Imperative':IMPERATIVE}
+export const tenses = ['Past','Present', 'Future', 'Imperative']
+export const binyanim = ["PA'Al", "PI'EL", "HIF'IL", "HITPA'EL"]
 

@@ -98,6 +98,7 @@ th{
   padding: 2px;
   text-align: center;
 }
+
 .rtl{
   text-align: right;
 }
@@ -120,6 +121,7 @@ th{
 .menu{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   padding: 15px;
   justify-content: space-around;
 }
@@ -127,7 +129,7 @@ th{
   width: 30%;
   border: 2px solid darkgreen;
   border-radius: 15px;
-  margin: 15px auto 0 auto;
+  margin: 10px auto 0 auto;
   font-weight: bold;
   background-color: darkgreen;
   color: white;
@@ -137,4 +139,38 @@ th{
 .menuButton:hover{
   background-color: lightgreen;
   color: black;
+}
+.settings{
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.set{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  margin: auto;
+}
+.settingsHeader{
+  width: 100%;
+}
+.settingOption{
+  border: 1px solid lightslategray;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+}
+.settingOption:hover{
+  background-color: lightseagreen;
+}
+
+.chosenSetting{
+  background-color: lightseagreen;
 }
