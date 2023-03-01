@@ -9,6 +9,7 @@ import Quiz from './components/Quiz';
 function App() {
   const [data, setData]  = useState()
   const [columns, setColumns]  = useState()
+  const [page, setPage] = useState(0)
 
   useEffect(() => {
     const papaConfig1 = {
@@ -34,11 +35,34 @@ function App() {
     readString(dataCSV, papaConfig1)
     readString(columnsCSV, papaConfig2)
   },[]);
+  function changePage(n){
+    return (()=>setPage(n))
+  }
+
+  const menu = <div className='menu'>
+                  <div className='menuButton' onClick={changePage(2)}>Start Test</div>
+                  <div className='menuButton' onClick={changePage(1)}>Vocabulary</div>
+              </div>
   if (data && columns){
+    let content
+          { {switch (page) {
+        case 0:
+          content = menu
+          break;
+        case 1:
+          content = <VerbsTable data={data} columns={columns} changePage={changePage}/>
+          break
+        case 2:
+          content = <Quiz data={data} columns={columns} changePage={changePage}/>
+          break
+        default:
+          content = menu
+          break;
+      }} }
+
     return (
     <div className="App">
-      {/* <VerbsTable data={data} columns={columns}/> */}
-      <Quiz data={data} columns={columns}/>
+      {content}
     </div>
     )} else {
       return (

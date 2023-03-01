@@ -77,11 +77,64 @@ tr:nth-child(even) {
   border: 2px solid darkgreen;
   background-color: lightgreen;
 }
-.right{
+.result{
   font-weight: bold;
+  margin-top: 15px;
+}
+.right{
   color: darkgreen;
 }
+
 .wrong{
-  font-weight: bold;
   color: darkred;
+}
+
+.externalLink{
+  margin: 15px auto 20px auto;
+}
+th{
+  background-color: lightblue;
+  font-weight: bold;
+  padding: 2px;
+  text-align: center;
+}
+.rtl{
+  text-align: right;
+}
+
+.backButton{
+  width: 150px;
+  padding: 5px;
+  margin: 5px 5px 5px auto;
+  border: solid 1px darkred;
+  background-color: darkred;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+.backButton:hover{
+  background-color: lightcoral;
+  color: black;
+}
+.menu{
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  justify-content: space-around;
+}
+.menuButton{
+  width: 30%;
+  border: 2px solid darkgreen;
+  border-radius: 15px;
+  margin: 15px auto 0 auto;
+  font-weight: bold;
+  background-color: darkgreen;
+  color: white;
+  height: 30px;
+  line-height: 30px;
+}
+.menuButton:hover{
+  background-color: lightgreen;
+  color: black;
 }

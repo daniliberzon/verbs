@@ -49,6 +49,7 @@ function Quiz(props) {
   
   return (
     <div className='quiz'>
+      <div className='backButton' onClick={props.changePage(0)}>Back</div>
       {content}
     </div>
   )

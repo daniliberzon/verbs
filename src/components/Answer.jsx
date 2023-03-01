@@ -18,14 +18,14 @@ function Answer(props) {
   return (
     <div className='answer'>
         <p className='verb'>{props.data[props.rightAnswer][31]}</p>
-        <div className={correctTranslation?'right':'wrong'}>Translation: {correctTranslation?'Right':'Wrong'}</div>
+        <div className={`result ${correctTranslation?'right':'wrong'}`}>Translation: {correctTranslation?'Right':'Wrong'}</div>
         <div>{props.data[props.rightAnswer][3]}</div>
-        <div className={isFormCorrect?'right':'wrong'}>Form: {isFormCorrect?'Right':'Wrong'}</div>
+        <div className={`result ${isFormCorrect?'right':'wrong'}`}>Form: {isFormCorrect?'Right':'Wrong'}</div>
         <div>Binyan: {props.data[props.rightAnswer][2]}</div>
         <div>{decodeForm(props.columns[props.form][1])}</div>
         <div className=''>Correct form: <span className='verb'>{correctForm}</span></div>
         <div>{yourAnswer}</div>
-        <a href={props.data[props.rightAnswer][1]} className='externalLink' target="_blank" rel="noopener noreferrer">more information</a>
+        <div className='externalLink'><a href={props.data[props.rightAnswer][1]}  target="_blank" rel="noopener noreferrer">more information</a></div>
         <div className='submitButton' id='nextButton' onClick={handleClick}>next</div>
     </div>
   )
