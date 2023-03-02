@@ -41,30 +41,43 @@ function App() {
   function changePage(n){
     return (()=>setPage(n))
   }
-  function handleClick(e){
-    if (e.target.className == 'settingOption tense' ||  e.target.className == 'settingOption tense chosenSetting'){
+
+  function handleClickTense(e){
+      let chosen = chosenTenses[e.target.id]
       setChosenTenses({
-        ...chosenTenses,
-        [e.target.id] : chosenTenses[e.target.id]?0:1
+      ...chosenTenses,
+      [e.target.id] : chosenTenses[e.target.id]?0:1
       })
+      if(chosen){
+        e.target.style.background = 'white'
+      } else {
+        e.target.style.background = 'lightseagreen'
+      }
     }
-    if (e.target.className == 'settingOption binyan' || e.target.className == 'settingOption binyan chosenSetting'){
-      setChosenBinyanim({
-        ...chosenBinyanim,
-        [e.target.id] : chosenBinyanim[e.target.id]?0:1
+  function handleClickBinyan(e){
+    let chosen = chosenBinyanim[e.target.id]
+    setChosenBinyanim({
+      ...chosenBinyanim,
+      [e.target.id] : chosen?0:1
       })
+      if(chosen){
+        e.target.style.background = 'white'
+      } else {
+        e.target.style.background = 'lightseagreen'
+      }
     }
-  }
+  
+
   const menu = <div className='menu'>
-                  <div className='settings' onClick={handleClick}>
+                  <div className='settings'>
                     <div className='settingsHeader'>Choose test settings:</div>
                     <div className='set tenses'>
                       <div>Tenses:</div>
-                        {tenses.map((x,i)=><div className={'settingOption tense'+`${chosenTenses[i]?' chosenSetting':''}`} key ={i} id={i}>{x}</div>)}
+                        {tenses.map((x,i)=><div className={'settingOption tense'+`${chosenTenses[i]?' chosenSetting':''}`} key ={i} id={i} onClick={handleClickTense}>{x}</div>)}
                     </div>
                     <div className='set binyanim'>
                       <div>Binyanim:</div>
-                        {binyanim.map((x,i)=><div className={'settingOption binyan'+`${chosenBinyanim[i]?' chosenSetting':''}`} key={i} id={i}>{x}</div>)}
+                        {binyanim.map((x,i)=><div className={'settingOption binyan'+`${chosenBinyanim[i]?' chosenSetting':''}`} key={i} id={i} onClick={handleClickBinyan}>{x}</div>)}
                     </div>
                   </div>
                   <div className='menuButton' onClick={changePage(2)}>Start Test</div>
