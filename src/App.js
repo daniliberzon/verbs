@@ -48,10 +48,12 @@ function App() {
       ...chosenTenses,
       [e.target.id] : chosenTenses[e.target.id]?0:1
       })
-      if(chosen){
-        e.target.style.background = 'white'
-      } else {
-        e.target.style.background = 'lightseagreen'
+      if (window.orientation>=0){
+        if(chosen){
+          e.target.style.background = 'white'
+        } else {
+          e.target.style.background = 'lightseagreen'
+        }
       }
     }
   function handleClickBinyan(e){
@@ -60,10 +62,12 @@ function App() {
       ...chosenBinyanim,
       [e.target.id] : chosen?0:1
       })
-      if(chosen){
-        e.target.style.background = 'white'
-      } else {
-        e.target.style.background = 'lightseagreen'
+      if(window.orientation>=0){
+        if(chosen){
+          e.target.style.background = 'white'
+        } else {
+          e.target.style.background = 'lightseagreen'
+        }
       }
     }
   
