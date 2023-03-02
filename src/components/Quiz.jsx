@@ -31,6 +31,7 @@ function Quiz(props) {
       filteredData = [...filteredData, ...props.data.filter(x => x[2]===binyanim[key])]
       }
   }
+
   if(filteredData.length===0){
     filteredData = props.data
   }
