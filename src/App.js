@@ -42,34 +42,20 @@ function App() {
     return (()=>setPage(n))
   }
 
-  function handleClickTense(e){
-      let chosen = chosenTenses[e.target.id]
-      setChosenTenses({
-      ...chosenTenses,
-      [e.target.id] : chosenTenses[e.target.id]?0:1
-      })
-      if (window.orientation>=0){
-        if(chosen){
-          e.target.style.background = 'white'
-        } else {
-          e.target.style.background = 'lightseagreen'
-        }
-      }
-    }
-  function handleClickBinyan(e){
-    let chosen = chosenBinyanim[e.target.id]
-    setChosenBinyanim({
-      ...chosenBinyanim,
-      [e.target.id] : chosen?0:1
-      })
-      if(window.orientation>=0){
-        if(chosen){
-          e.target.style.background = 'white'
-        } else {
-          e.target.style.background = 'lightseagreen'
-        }
-      }
-    }
+  function createHandleClick(state, setState){
+    return(
+      function handleClick(e){
+        let chosen = state[e.target.id]
+        setState({
+          ...state,
+          [e.target.id] : chosen?0:1
+          })
+          if(window.orientation>=0){
+            if(chosen){
+              e.target.style.background = 'white'
+            } else {
+              e.target.style.background = 'lightseagreen'
+  }}})}
   
 
   const menu = <div className='menu'>
@@ -77,11 +63,11 @@ function App() {
                     <div className='settingsHeader'>Choose test settings:</div>
                     <div className='set tenses'>
                       <div>Tenses:</div>
-                        {tenses.map((x,i)=><div className={'settingOption tense'+`${chosenTenses[i]?' chosenSetting':''}`} key ={i} id={i} onClick={handleClickTense}>{x}</div>)}
+                        {tenses.map((x,i)=><div className={'settingOption tense'+`${chosenTenses[i]?' chosenSetting':''}`} key ={i} id={i} onClick={createHandleClick(chosenTenses,setChosenTenses)}>{x}</div>)}
                     </div>
                     <div className='set binyanim'>
                       <div>Binyanim:</div>
-                        {binyanim.map((x,i)=><div className={'settingOption binyan'+`${chosenBinyanim[i]?' chosenSetting':''}`} key={i} id={i} onClick={handleClickBinyan}>{x}</div>)}
+                        {binyanim.map((x,i)=><div className={'settingOption binyan'+`${chosenBinyanim[i]?' chosenSetting':''}`} key={i} id={i} onClick={createHandleClick(chosenBinyanim,setChosenBinyanim)}>{x}</div>)}
                     </div>
                   </div>
                   <div className='menuButton' onClick={changePage(2)}>Start Test</div>
