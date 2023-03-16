@@ -13,6 +13,7 @@ function VerbsTable(props) {
                 <th>{props.columns[2][1]}</th>
                 <th>{props.columns[3][1]}</th>
                 <th>{decodeForm(props.columns[4][1])}</th>
+                <th>{props.columns[32][1]}</th>
               </tr>
             </thead>
             <tbody>
@@ -23,6 +24,7 @@ function VerbsTable(props) {
                   <td>{elem[2]}</td>
                   <td>{elem[3]}</td>
                   <td className='rtl'>{elem[4]}</td>
+                  <td className='rtl'>{elem[33]}</td>
                 </tr>
               )})}
             </tbody>
