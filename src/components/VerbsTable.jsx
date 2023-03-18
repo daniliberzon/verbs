@@ -24,7 +24,7 @@ function VerbsTable(props) {
                   <td>{elem[2]}</td>
                   <td>{elem[3]}</td>
                   <td className='rtl'>{elem[4]}</td>
-                  <td className='rtl'>{elem[33]}</td>
+                  <td className='rtl'>{elem[32]}</td>
                 </tr>
               )})}
             </tbody>
