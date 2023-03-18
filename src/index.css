@@ -26,6 +26,10 @@ table{
 tr:nth-child(even) {
   background-color: lightcyan;
 }
+.quizSettings{
+  text-align: center;
+}
+
 .questionOptions{
   display: flex;
   flex-direction:row;
