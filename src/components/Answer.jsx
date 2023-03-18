@@ -15,6 +15,13 @@ function Answer(props) {
     function handleClick(e){
       props.setMode(0)
     }
+    props.currentStats.current = [props.currentStats.current[0] + 1, props.currentStats.current[1] + (1*correctTranslation + 2*isFormCorrect)/3.]
+    let formForStats = decodeForm(props.columns[props.form][1]).split(' ')[0].replace(',','') + ' ' + props.data[props.rightAnswer][2]
+    props.stats.current = {
+      ...props.stats.current,
+      [formForStats] : [props.stats.current[formForStats][0]+1, props.stats.current[formForStats][1] + (1*correctTranslation + 2*isFormCorrect)/3.]
+    }
+    console.log(props.stats.current)
   return (
     <div className='answer'>
         <p className='verb'>{props.data[props.rightAnswer][31]}</p>
@@ -27,6 +34,9 @@ function Answer(props) {
         <div>{yourAnswer}</div>
         <div className='externalLink'><a href={props.data[props.rightAnswer][1]}  target="_blank" rel="noopener noreferrer">more information</a></div>
         <div className='submitButton' id='nextButton' onClick={handleClick}>next</div>
+        <div className="currentStats">
+          <p>{`Questions: ${props.currentStats.current[0]} Correct: ${Math.round(props.currentStats.current[1]/props.currentStats.current[0]*100)}%`}</p>
+        </div>
     </div>
   )
 }

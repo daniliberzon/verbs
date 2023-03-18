@@ -69,3 +69,13 @@ for (let i = 27; i<=29; i ++){
 export const tensesForms = {'Past': PAST,'Present':PRESENT, 'Future':FUTURE, 'Imperative':IMPERATIVE}
 export const tenses = ['Past','Present', 'Future', 'Imperative']
 export const binyanim = ["PA'AL", "PI'EL", "HIF'IL", "HITPA'EL", "NIF'AL"]
+
+
+let stats = {}
+for (let i=0; i<tenses.length; i++){
+    for(let j=0; j<binyanim.length;j++){
+        stats[tenses[i].toLowerCase()+' '+binyanim[j]] = [0,0]
+    }
+}
+
+export const tensesStats = stats

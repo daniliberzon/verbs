@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { getRandomN, shuffle , tensesForms, tenses, binyanim} from '../utils/utils'
+import { getRandomN, shuffle , tensesForms, tenses, binyanim, tensesStats} from '../utils/utils'
 import Question from './Question'
 import Answer from './Answer'
 
@@ -11,6 +11,8 @@ function Quiz(props) {
   const [form, setForm] = useState(-1)
   const [answer ,setAnswer] = useState('')
   const [chosen, setChosen] = useState(-1)
+  const currentStats = useRef([0,0])
+  const stats = useRef(tensesStats)
 
   let variants = []
 
@@ -62,7 +64,7 @@ function Quiz(props) {
       content = <Question data = {filteredData} columns = {props.columns} options = {options} form = {form} setMode={setMode} chosen={chosen} setChosen ={setChosen} answer = {answer} setAnswer={setAnswer} rightAnswer = {question}/>
       break
     case 2:
-      content = <Answer data = {filteredData} columns = {props.columns} options = {options} form = {form} rightAnswer = {question} chosen={chosen} answer = {answer} setMode={setMode}/>
+      content = <Answer data = {filteredData} columns = {props.columns} options = {options} form = {form} rightAnswer = {question} chosen={chosen} answer = {answer} setMode={setMode} stats={stats} currentStats={currentStats}/>
       break
       default:
       content = <div>error</div>
