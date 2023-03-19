@@ -4,6 +4,7 @@ import columnsCSV from '../utils/columns.csv'
 import { readString } from 'react-papaparse';
 import Quiz from './Quiz';
 import { tenses, binyanim } from '../utils/utils';
+import Navigation from './Navigation';
 
 function QuizSettings() {
   const [data, setData]  = useState()
@@ -85,8 +86,11 @@ function QuizSettings() {
       }} }
 
     return (
-    <div className="quizSettings">
-      {content}
+    <div className='page'>
+      <Navigation />
+      <div className="quizSettings">
+        {content}
+      </div>
     </div>
     )} else {
       return (

@@ -19,6 +19,7 @@ code {
 }
 a:link{
   text-decoration: none;
+  color: blue;
 }
 table{
   width : 100%;
@@ -177,4 +178,53 @@ th{
 
 .chosenSetting{
   background-color: lightseagreen;
+}
+.page{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 100vh;
+}
+.navigation{
+  display: flex;
+  flex-direction: row;
+  background-color: darkslategrey;
+  color: white;
+  justify-content: space-around;
+  padding: 10px;
+  align-items: center;
+}
+.mainPage{
+  flex:1;
+  background-image: url("./assets/background.jpg");
+  background-size: cover;
+}
+.footer{
+  background-color: lightgrey;
+  font-size: small;
+}
+.mainText{
+  margin: 25px;
+  padding: 15px;
+  background-color: white;
+  opacity: 85%;
+  border-radius: 15px;
+  text-align: justify;
+}
+a.active{
+  text-decoration: underline;
+  color:bisque;
+}
+.NavLink:hover{
+  text-decoration: underline;
+  color:bisque;
+}
+.mainHeader{
+  font-size: larger;
+  font-weight: bold;
+  padding: 10px;
+
+}
+p{
+  padding: 5px;
 }
