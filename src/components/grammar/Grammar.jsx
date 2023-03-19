@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react';
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { menuStructure } from '../../utils/constantsGrammar';
 import GrammarCard from './GrammarCard';
 import GrammarMenuItem from './GrammarMenuItem';
@@ -10,7 +10,7 @@ function Grammar() {
   const [tense, setTense] = useState();
   const [binyan, setBinyan] = useState();
   const [gizra, setGizra] = useState();
-
+  
   const changeTense = (newTense) => {
     setTense(newTense);
     setBinyan();
@@ -21,7 +21,6 @@ function Grammar() {
     setBinyan(newBinyan);
     setGizra();
   }
-
   if (location.state) {
     const currentTense = location.state.tense;
     const currentBinyan = location.state.binyan;
@@ -31,6 +30,18 @@ function Grammar() {
       <GrammarCard tense={currentTense} binyan={currentBinyan} gizra={currentGizra} />
     )
   }
+  if (location.search) {
+    const form = location.search.split('&');
+    const currentTense = decodeURI(form[0].slice(1));
+    const currentBinyan = decodeURI(form[1]);
+    const currentGizra = decodeURI(form[2]);
+    if (currentTense && currentBinyan && currentGizra){
+    return (
+      <GrammarCard tense={currentTense} binyan={currentBinyan} gizra={currentGizra} />
+    )
+  }}
+
+
 
   else
     return (
