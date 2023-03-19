@@ -1,3 +1,4 @@
+import { Input } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { decodeForm } from '../utils/utils'
 
@@ -27,7 +28,7 @@ function Question(props) {
             })}
         </div>
         <div className='question'>Type form: {decodeForm(props.columns[props.form][1])}</div>
-        <input className='answerInput' id='answerInput' dir='rtl' onChange={handleChange} value={props.answer} autoComplete='off'></input>
+        <Input w="50%" fontSize="20px" borderColor="black" id='answerInput' dir='rtl' onChange={handleChange} value={props.answer} autoComplete='off' />
         <div className='submitButton'>Submit</div>
     </div>
   )
