@@ -1,31 +1,30 @@
 import React from 'react'
-import { Link , NavLink} from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { NavLink} from 'react-router-dom'
+import { toggleIsLoggedIn } from '../redux/logSlice';
 
-function Navigation(props) {
-    function handleSignIn(){
-        props.setIsLoggedIn(1)
-    }
-    function handleSignOut(){
-        props.setIsLoggedIn(0)
-    }
+function Navigation() {
+    const isLoggedIn = useSelector((state) => state.log.isLoggedIn);
+    const dispatch = useDispatch();
+
     let menu
-    if(props.isLoggedIn){
+    if (isLoggedIn){
         menu = (<div className='navigation'>
                     <NavLink className='NavLink' to="/">Home</NavLink>
                     <NavLink className='NavLink' to="/quiz">Quiz</NavLink>
                     <NavLink className='NavLink' to="/grammar">Grammar</NavLink>
-                    {/* <Link to="account" style={{display: "block"}}>Account</Link> */}
-                    <button onClick={handleSignOut}>Account</button>
+                    {/* <NavLink to="account" style={{display: "block"}}>Account</NavLink> */}
+                    <button onClick={() => {}}>Account</button>
                 </div>)
     } else {
         menu = (<div className='navigation'>
             <NavLink className='NavLink' to="/">Home</NavLink>
             <NavLink className='NavLink' to="/quiz">Quiz</NavLink>
             <NavLink className='NavLink' to="/grammar">Grammar</NavLink>
-            {/* <Link to="signIn" style={{display: "block"}}>Sign In</Link> */}
-            {/* <Link to="signUp" style={{display: "block"}}>Sign Up</Link> */}
-            <button onClick={handleSignIn}>Sign In</button>
-            <button onClick={handleSignIn}>Sign Up</button>
+            {/* <NavLink to="signIn" style={{display: "block"}}>Sign In</NavLink> */}
+            {/* <NavLink to="signUp" style={{display: "block"}}>Sign Up</NavLink> */}
+            <button onClick={() => dispatch(toggleIsLoggedIn())}>Sign In</button>
+            <button onClick={() => {}}>Sign Up</button>
         </div>)
     }
   return menu

@@ -1,13 +1,10 @@
-import { Box } from '@chakra-ui/react';
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import React from 'react'
 import Navigation from './Navigation';
 
 function StartPage() {
-  const [isLoggedIn, setIsLoggedIn] = useState(0)
   return (
     <div className='page'>
-      <Navigation isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+      <Navigation />
       <div className='mainPage'>
         <div className='mainText'>
           <p className='mainHeader'>Paul Binyan</p>
