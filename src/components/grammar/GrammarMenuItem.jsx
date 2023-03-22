@@ -4,11 +4,11 @@ import { Button, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 
 function GrammarMenuItem(props) {
   return (
-    <Menu >
-      <MenuButton as={Button} rightIcon={<ChevronDownIcon />} color="blue" m={2} isDisabled={props.isDisabled}>
+    <Menu>
+      <MenuButton as={Button} rightIcon={<ChevronDownIcon />} color="darkslategrey" m={2} isDisabled={props.isDisabled}>
         {props.stateValue ? props.stateValue : `Choose ${props.stateName}`}
       </MenuButton>
-      <MenuList color="blue">
+      <MenuList color="darkslategrey">
         {props.elements.map((key, index) => 
           <MenuItem key={index} onClick={() => props.changeState(key)}>{key}</MenuItem>)
         }

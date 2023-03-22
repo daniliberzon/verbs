@@ -6,7 +6,7 @@ function GrammarCard(props) {
 
   return (
     <Box align="center">
-      <Heading as="h1" m={10} color="blue">
+      <Heading as="h1" m={10} color="darkslategrey">
         Tense: {props.tense}, Binyan: {props.binyan}, Gizra: {props.gizra}
       </Heading>
       <Image w="80%" src={grammarTables[`${props.tense}_${props.binyan}_${props.gizra}`]} alt="table" m={5}/>

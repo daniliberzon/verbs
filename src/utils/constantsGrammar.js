@@ -17,6 +17,7 @@ import PRESENT_HIFIL_AYN_IUD_IMG from "../img/present-hifil-ayn-iud.svg";
 import PRESENT_HITPAEL_SHLEMIM_IMG from "../img/present-hitpael-shlemim.svg";
 import PRESENT_HITPAEL_AYN_GRONIYOT_IMG from "../img/present-hitpael-ayn-groniyot.svg";
 import PRESENT_HITPAEL_LAMED_HEI_IMG from "../img/present-hitpael-lamed-hei.svg";
+import PRESENT_HITPAEL_FOUR_LETTERS_IMG from "../img/present-hitpael-4letters.svg"
 
 import PRESENT_NIFAL_SHLEMIM_IMG from "../img/present-nifal-shlemim.svg";
 import PRESENT_NIFAL_PEI_GRONIYOT_IMG from "../img/present-nifal-pei-groniyot.svg";
@@ -40,6 +41,7 @@ import PAST_HIFIL_AYN_IUD_IMG from "../img/past-hifil-ayn-iud.svg";
 import PAST_HITPAEL_SHLEMIM_IMG from "../img/past-hitpael-shlemim.svg";
 import PAST_HITPAEL_AYN_GRONIYOT_IMG from "../img/past-hitpael-ayn-groniyot.svg";
 import PAST_HITPAEL_LAMED_HEI_IMG from "../img/past-hitpael-lamed-hei.svg";
+import PAST_HITPAEL_FOUR_LETTERS_IMG from "../img/past-hitpael-4letters.svg";
 
 import PAST_NIFAL_SHLEMIM_IMG from "../img/past-nifal-shlemim.svg";
 import PAST_NIFAL_PEI_GRONIYOT_IMG from "../img/past-nifal-pei-groniyot.svg";
@@ -64,6 +66,7 @@ import FUTURE_HIFIL_AYN_IUD_IMG from "../img/future-hifil-ayn-iud.svg";
 import FUTURE_HITPAEL_SHLEMIM_IMG from "../img/future-hitpael-shlemim.svg";
 import FUTURE_HITPAEL_AYN_GRONIYOT_IMG from "../img/future-hitpael-ayn-groniyot.svg";
 import FUTURE_HITPAEL_LAMED_HEI_IMG from "../img/future-hitpael-lamed-hei.svg";
+import FUTURE_HITPAEL_FOUR_LETTERS_IMG from "../img/future-hitpael-4letters.svg";
 
 import FUTURE_NIFAL_SHLEMIM_IMG from "../img/future-nifal-shlemim.svg";
 import FUTURE_NIFAL_PEI_GRONIYOT_IMG from "../img/future-nifal-pei-groniyot.svg";
@@ -89,6 +92,7 @@ import IMPERATIVE_HIFIL_AYN_IUD_IMG from "../img/imperative-hifil-ayn-iud.svg";
 import IMPERATIVE_HITPAEL_SHLEMIM_IMG from "../img/imperative-hitpael-shlemim.svg";
 import IMPERATIVE_HITPAEL_AYN_GRONIYOT_IMG from "../img/imperative-hitpael-ayn-groniyot.svg";
 import IMPERATIVE_HITPAEL_LAMED_HEI_IMG from "../img/imperative-hitpael-lamed-hei.svg";
+import IMPERATIVE_HITPAEL_FOUR_LETTERS_IMG from "../img/imperative-hitpael-4letters.svg";
 
 import IMPERATIVE_NIFAL_SHLEMIM_IMG from "../img/imperative-nifal-shlemim.svg";
 import IMPERATIVE_NIFAL_PEI_GRONIYOT_IMG from "../img/imperative-nifal-pei-groniyot.svg";
@@ -118,28 +122,28 @@ export const menuStructure = {
         "PA'AL": [SHLEMIM, AYN_GRONIYOT, AYN_VAV_IUD, LAMED_HEI, LAMED_HET_AYN],
         "PI'EL": [SHLEMIM, FOUR_LETTERS, AYN_GRONIYOT, LAMED_HEI],
         "HIF'IL": [SHLEMIM, PEI_GRONIYOT, PEI_NUN, AYN_IUD],
-        "HITPA'EL": [SHLEMIM, AYN_GRONIYOT, LAMED_HEI],
+        "HITPA'EL": [SHLEMIM, AYN_GRONIYOT, LAMED_HEI, FOUR_LETTERS],
         "NIF'AL": [SHLEMIM, PEI_GRONIYOT, LAMED_HET_AYN]
     },
     Past: {
         "PA'AL": [SHLEMIM, AYN_GRONIYOT, AYN_VAV_IUD, LAMED_HEI],
         "PI'EL": [SHLEMIM, FOUR_LETTERS, AYN_REISH, LAMED_HEI],
         "HIF'IL": [SHLEMIM, PEI_GRONIYOT, PEI_NUN, AYN_IUD],
-        "HITPA'EL": [SHLEMIM, AYN_GRONIYOT, LAMED_HEI],
+        "HITPA'EL": [SHLEMIM, AYN_GRONIYOT, LAMED_HEI, FOUR_LETTERS],
         "NIF'AL": [SHLEMIM, PEI_GRONIYOT, AYN_GRONIYOT]
     },
     Future: {
         "PA'AL": [SHLEMIM_EFOL, PEI_GRONIYOT, PEI_IUD, SHLEMIM_EFAL, AYN_VAV_IUD, LAMED_HEI],
         "PI'EL": [SHLEMIM, FOUR_LETTERS, LAMED_HEI],
         "HIF'IL": [SHLEMIM, PEI_GRONIYOT, PEI_NUN, AYN_IUD],
-        "HITPA'EL": [SHLEMIM, AYN_GRONIYOT, LAMED_HEI],
+        "HITPA'EL": [SHLEMIM, AYN_GRONIYOT, LAMED_HEI, FOUR_LETTERS],
         "NIF'AL": [SHLEMIM, PEI_GRONIYOT, AYN_GRONIYOT]
     },
     Imperative: {
         "PA'AL": [SHLEMIM, PEI_GRONIYOT, PEI_IUD_HEI_NUN, AYN_GRONIYOT, AYN_VAV_IUD, LAMED_HEI, LAMED_GRONIYOT],
         "PI'EL": [SHLEMIM, FOUR_LETTERS, LAMED_HEI],
         "HIF'IL": [SHLEMIM, PEI_GRONIYOT, PEI_NUN, AYN_IUD],
-        "HITPA'EL": [SHLEMIM, AYN_GRONIYOT, LAMED_HEI],
+        "HITPA'EL": [SHLEMIM, AYN_GRONIYOT, LAMED_HEI, FOUR_LETTERS],
         "NIF'AL": [SHLEMIM, PEI_GRONIYOT, AYN_GRONIYOT]
     }
 }
@@ -164,6 +168,7 @@ export const grammarTables = {
     [`Present_HITPA'EL_${SHLEMIM}`]: PRESENT_HITPAEL_SHLEMIM_IMG,
     [`Present_HITPA'EL_${AYN_GRONIYOT}`]: PRESENT_HITPAEL_AYN_GRONIYOT_IMG,
     [`Present_HITPA'EL_${LAMED_HEI}`]: PRESENT_HITPAEL_LAMED_HEI_IMG,
+    [`Present_HITPA'EL_${FOUR_LETTERS}`]: PRESENT_HITPAEL_FOUR_LETTERS_IMG,
 
     [`Present_NIF'AL_${SHLEMIM}`]: PRESENT_NIFAL_SHLEMIM_IMG,
     [`Present_NIF'AL_${PEI_GRONIYOT}`]: PRESENT_NIFAL_PEI_GRONIYOT_IMG,
@@ -187,6 +192,7 @@ export const grammarTables = {
     [`Past_HITPA'EL_${SHLEMIM}`]: PAST_HITPAEL_SHLEMIM_IMG,
     [`Past_HITPA'EL_${AYN_GRONIYOT}`]: PAST_HITPAEL_AYN_GRONIYOT_IMG,
     [`Past_HITPA'EL_${LAMED_HEI}`]: PAST_HITPAEL_LAMED_HEI_IMG,
+    [`Past_HITPA'EL_${FOUR_LETTERS}`]: PAST_HITPAEL_FOUR_LETTERS_IMG,
 
     [`Past_NIF'AL_${SHLEMIM}`]: PAST_NIFAL_SHLEMIM_IMG,
     [`Past_NIF'AL_${PEI_GRONIYOT}`]: PAST_NIFAL_PEI_GRONIYOT_IMG,
@@ -211,6 +217,7 @@ export const grammarTables = {
     [`Future_HITPA'EL_${SHLEMIM}`]: FUTURE_HITPAEL_SHLEMIM_IMG,
     [`Future_HITPA'EL_${AYN_GRONIYOT}`]: FUTURE_HITPAEL_AYN_GRONIYOT_IMG,
     [`Future_HITPA'EL_${LAMED_HEI}`]: FUTURE_HITPAEL_LAMED_HEI_IMG,
+    [`Future_HITPA'EL_${FOUR_LETTERS}`]: FUTURE_HITPAEL_FOUR_LETTERS_IMG,
     
     [`Future_NIF'AL_${SHLEMIM}`]: FUTURE_NIFAL_SHLEMIM_IMG,
     [`Future_NIF'AL_${PEI_GRONIYOT}`]: FUTURE_NIFAL_PEI_GRONIYOT_IMG,
@@ -236,6 +243,7 @@ export const grammarTables = {
     [`Imperative_HITPA'EL_${SHLEMIM}`]: IMPERATIVE_HITPAEL_SHLEMIM_IMG,
     [`Imperative_HITPA'EL_${AYN_GRONIYOT}`]: IMPERATIVE_HITPAEL_AYN_GRONIYOT_IMG,
     [`Imperative_HITPA'EL_${LAMED_HEI}`]: IMPERATIVE_HITPAEL_LAMED_HEI_IMG,
+    [`Imperative_HITPA'EL_${FOUR_LETTERS}`]: IMPERATIVE_HITPAEL_FOUR_LETTERS_IMG,
 
     [`Imperative_NIF'AL_${SHLEMIM}`]: IMPERATIVE_NIFAL_SHLEMIM_IMG,
     [`Imperative_NIF'AL_${PEI_GRONIYOT}`]: IMPERATIVE_NIFAL_PEI_GRONIYOT_IMG,
@@ -278,7 +286,7 @@ export const findGizra = (tense, binyan, root) => {
     if (root[4] === "י" && binyan === "HIF'IL")
         return AYN_IUD;
     
-    if (root[4] === "י" || root[4] === "י")
+    if (root[4] === "י" || root[4] === "ו")
         if (menuStructure[tense][binyan].find((el) => el === AYN_VAV_IUD))
             return AYN_VAV_IUD;
     
