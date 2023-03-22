@@ -6,6 +6,7 @@ import StartPage from './components/StartPage';
 import { ChakraProvider } from '@chakra-ui/react';
 import Account from './components/Account';
 import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
 
 function App() {
   return(
@@ -16,6 +17,7 @@ function App() {
         <Route path="account" element={<Account />} />
         <Route path="grammar" element={<Grammar />} />
         <Route path="signin" element={<SignIn />} />
+        <Route path="signup" element={<SignUp />} />
       </Routes>
     </ChakraProvider>
   )
