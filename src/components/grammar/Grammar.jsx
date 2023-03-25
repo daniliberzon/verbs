@@ -1,5 +1,6 @@
-import { Box, Heading, SimpleGrid } from '@chakra-ui/react';
-import React, { useState } from 'react';
+import { Box, Heading, SimpleGrid, useMediaQuery } from '@chakra-ui/react';
+import MoveTo from 'moveto';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { menuStructure } from '../../utils/constantsGrammar';
 import Navigation from '../Navigation';
@@ -23,6 +24,18 @@ function Grammar() {
     setBinyan(newBinyan);
     setGizra();
   }
+
+  const [isLargerThan700] = useMediaQuery('(min-width: 700px)');
+  let numColMenu = isLargerThan700 ? 3 : 1;
+  let menuHeight = isLargerThan700 ? "60px" : "180px";
+
+  useEffect(() => {
+    const moveTo = new MoveTo({duration: 1000});
+    const grammarTable = document.getElementById("grammarTable");
+    if (gizra)
+      moveTo.move(grammarTable);
+  }, [gizra]);
+
   if (location.state) {
     const currentTense = location.state.tense;
     const currentBinyan = location.state.binyan;
@@ -48,7 +61,7 @@ function Grammar() {
       <>
         <Navigation />
 
-        <Box w="100%" mt={2} mb={5}>
+        <Box w="100%" mt={2} mb={5} ml={2}>
           <Heading mb={2}>Grammar reference</Heading>
           <p>They say that verb conjugation is the hardest theme for an aspiring Hebrew-learner.
             The reason could be that there are a lot of exceptions that may affect spelling and vocalization of different forms of Hebrew verbs.</p>
@@ -59,32 +72,34 @@ function Grammar() {
 
         <GrammarReference />
 
-        <Box bg="#3EB489" w="100%" h="60px" color="white" align="center">
-          <SimpleGrid columns={3} spacing={10} ml={10} mr={10}>
-            <GrammarMenuItem
-              stateName="Tense"
-              stateValue={tense}
-              changeState={changeTense}
-              elements={Object.keys(menuStructure)} />
+        <Box id="grammarTable" h="100vh">
+          <Box bg="#3EB489" w="100%" h={menuHeight} color="white" align="center">
+            <SimpleGrid columns={numColMenu} ml={10} mr={10}>
+              <GrammarMenuItem
+                stateName="Tense"
+                stateValue={tense}
+                changeState={changeTense}
+                elements={Object.keys(menuStructure)} />
 
-            <GrammarMenuItem
-              stateName="Binyan"
-              stateValue={binyan}
-              changeState={changeBinyan}
-              elements={tense ? Object.keys(menuStructure[tense]) : []}
-              isDisabled={!tense} />
+              <GrammarMenuItem
+                stateName="Binyan"
+                stateValue={binyan}
+                changeState={changeBinyan}
+                elements={tense ? Object.keys(menuStructure[tense]) : []}
+                isDisabled={!tense} />
 
-            <GrammarMenuItem
-              stateName="Gizra"
-              stateValue={gizra}
-              changeState={setGizra}
-              elements={binyan ? Object.values(menuStructure[tense][binyan]) : []}
-              isDisabled={!binyan}
-            />
-          </SimpleGrid>
+              <GrammarMenuItem
+                stateName="Gizra"
+                stateValue={gizra}
+                changeState={setGizra}
+                elements={binyan ? Object.values(menuStructure[tense][binyan]) : []}
+                isDisabled={!binyan}
+              />
+            </SimpleGrid>
 
+          </Box>
+          {tense && binyan && gizra ? <GrammarCard tense={tense} binyan={binyan} gizra={gizra}/> : <></>}
         </Box>
-        {tense && binyan && gizra ? <GrammarCard tense={tense} binyan={binyan} gizra={gizra}/> : <></>}
       </> 
     )
 }
