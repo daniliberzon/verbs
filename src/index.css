@@ -231,3 +231,7 @@ p{
 .currentStats{
   padding: 5px;
 }
+.dynamics{
+  height: 50%;
+  padding: 10px;
+}
