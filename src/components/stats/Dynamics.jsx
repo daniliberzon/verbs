@@ -1,18 +1,17 @@
-import React from 'react'
+import { React, useEffect, useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { getUid } from "../../firebase/auth-service";
+import {getAllDynamicsStats} from "../../firebase/stats-service"
 
 function Dynamics() {
-
-    function getDynamics(){
-        return ({
-            '2023-3-15': 100,
-            '2023-3-22': 200,
-            '2023-2-15': 50,
-            '2023-3-26': 250
-        })
-    }
-
-    const dyn = getDynamics()
+    const [dyn, setDyn] = useState()
+    const [id, setId] = useState()
+    
+    useEffect(()=>{
+      getUid().then(id=>setId(id))
+      getAllDynamicsStats(id).then(data=>setDyn(data.dynamicStat))
+    },[id])
+    if(dyn){
     let data = []
     let d_min = -1
     let d_max = -1
@@ -62,7 +61,9 @@ function Dynamics() {
             <Line type="monotone" dataKey="score" stroke="#8884d8" activeDot={{ r: 2 }} dot={false}/>
           </LineChart>
         </ResponsiveContainer>
-      )
+      )} else {
+        return <div>Loading...</div>
+      }
 
 }
 export default Dynamics
