@@ -26,8 +26,8 @@ function Navigation() {
                     <NavLink className='NavLink' to="/">Home</NavLink>
                     <NavLink className='NavLink' to="/quiz">Quiz</NavLink>
                     <NavLink className='NavLink' to="/grammar">Grammar</NavLink>
-                    <NavLink to="/account" style={{display: "block"}}>Account</NavLink>
-                    <button onClick={() => userLogout()}>Log Out</button>
+                    <NavLink className='NavLink' to="/account">Account</NavLink>
+                    <button className='logout' onClick={() => userLogout()}>Log Out</button>
                 </div>)
     } else {
         menu = (<div className='navigation'>

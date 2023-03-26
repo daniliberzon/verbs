@@ -228,10 +228,23 @@ a.active{
 p{
   padding: 5px;
 }
-.currentStats{
-  padding: 5px;
-}
+
 .dynamics{
   height: 50%;
   padding: 10px;
+}
+.logout:hover{
+  color: red;
+  text-decoration: underline;
+}
+.currentStats{
+  width: max-content;
+  margin: 10px auto 0px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 5px;
+  justify-content: center;
+  border-radius: 15px;
+  border: solid black 1px;
 }
