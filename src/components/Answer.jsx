@@ -1,9 +1,14 @@
 import { Link } from 'react-router-dom'
-import React from 'react'
+import React, { useEffect} from 'react'
 import { decodeForm } from '../utils/utils'
 import {findGizra} from '../utils/constantsGrammar'
+import { addDynamicsStat, getAllDynamicsStats } from '../firebase/stats-service'
+import { getUid } from '../firebase/auth-service'
+import { useSelector } from 'react-redux'
 
 function Answer(props) {
+    const isLoggedIn = useSelector((state) => state.log.isLoggedIn)
+
     let correctTranslation = props.chosen==props.rightAnswer
     let correctForm = props.data[props.rightAnswer][props.form].replace('!',``)
     const regex = /[\u0591-\u05C7]+/g
@@ -22,13 +27,30 @@ function Answer(props) {
     function handleClick(e){
       props.setMode(0)
     }
-    props.currentStats.current = [props.currentStats.current[0] + 1, props.currentStats.current[1] + (1*correctTranslation + 2*isFormCorrect)/3.]
+    const scoresIncrease = (1*correctTranslation + 2*isFormCorrect)
+    props.currentStats.current = [props.currentStats.current[0] + 1, props.currentStats.current[1] + scoresIncrease]
     let formForStats = decodeForm(props.columns[props.form][1]).split(' ')[0].replace(',','') + ' ' + props.data[props.rightAnswer][2]
+  
     props.stats.current = {
       ...props.stats.current,
-      [formForStats] : [props.stats.current[formForStats][0]+1, props.stats.current[formForStats][1] + (1*correctTranslation + 2*isFormCorrect)/3.]
+      [formForStats] : [props.stats.current[formForStats][0]+1, props.stats.current[formForStats][1] + scoresIncrease]
     }
-    
+    useEffect(()=>{
+      if(isLoggedIn){
+        getUid().then(id=>getAllDynamicsStats(id).then(data=>{
+          const date = new Date()
+          let day = date.getDate();
+          let month = date.getMonth() + 1;
+          let year = date.getFullYear();
+          let dateString  = `${year}-${month}-${day}`
+          if (dateString in data.dynamicStat){
+            addDynamicsStat(dateString, data.dynamicStat[dateString] + scoresIncrease, id)
+          } else {
+            addDynamicsStat(dateString, scoresIncrease, id)
+          }
+        }))}
+    },[])
+
   return (
     <div className='answer'>
         <p className='verb'>{props.data[props.rightAnswer][31]}</p>
@@ -44,8 +66,8 @@ function Answer(props) {
         <div className='submitButton' id='nextButton' onClick={handleClick}>next</div>
         <div className="currentStats">
           <p>{`Questions: ${props.currentStats.current[0]}`}</p>
-          <p>{`Scores: ${Math.round(props.currentStats.current[1]*3)}`}</p>
-          <p>{`Correct: ${Math.round(props.currentStats.current[1]/props.currentStats.current[0]*100)}%`}</p>
+          <p>{`Scores: ${Math.round(props.currentStats.current[1])}`}</p>
+          <p>{`Correct: ${Math.round(props.currentStats.current[1]/3.0/props.currentStats.current[0]*100)}%`}</p>
         </div>
     </div>
   )

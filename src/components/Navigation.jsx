@@ -14,7 +14,6 @@ function Navigation() {
     const userLogout = async () => {
         await signOut(auth)
             .then(() => {
-                console.log("Logged Out");
                 dispatch(toggleIsLoggedIn());
                 navigate("/");
                 alert("Logged Out!");

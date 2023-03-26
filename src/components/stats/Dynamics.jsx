@@ -5,12 +5,10 @@ import {getAllDynamicsStats} from "../../firebase/stats-service"
 
 function Dynamics() {
     const [dyn, setDyn] = useState()
-    const [id, setId] = useState()
     
     useEffect(()=>{
-      getUid().then(id=>setId(id))
-      getAllDynamicsStats(id).then(data=>setDyn(data.dynamicStat))
-    },[id])
+      getUid().then(id=>getAllDynamicsStats(id).then(data=>setDyn(data.dynamicStat)))
+    },[])
     if(dyn){
     let data = []
     let d_min = -1
