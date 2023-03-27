@@ -36,7 +36,7 @@ function Answer(props) {
       [formForStats] : [props.stats.current[formForStats][0]+1, props.stats.current[formForStats][1] + scoresIncrease]
     }
     useEffect(()=>{
-      if(isLoggedIn){
+      if(isLoggedIn && scoresIncrease>0){
         getUid().then(id=>getAllDynamicsStats(id).then(data=>{
           const date = new Date()
           let day = date.getDate();
@@ -61,8 +61,11 @@ function Answer(props) {
         <div>{decodeForm(props.columns[props.form][1])}</div>
         <div className=''>Correct form: <span className='verb'>{correctForm}</span></div>
         <div>{yourAnswer}</div>
-        <div className='externalLink'><a href={props.data[props.rightAnswer][1]}  target="_blank" rel="noopener noreferrer">Check word on Pealim.com</a></div>
-        <div className='externalLink'><Link target="_blank" to={`../grammar?${tense}&${binyan}&${gizra}`}>See grammar help</Link></div>
+        <div className='extraInfo'>
+          <div className='extraInfoTitle'>More about this verb:</div>
+          <div className='externalLink'><a href={props.data[props.rightAnswer][1]}  target="_blank" rel="noopener noreferrer">Pealim.com</a></div>
+          <div className='externalLink'><Link target="_blank" to={`../grammar?${tense}&${binyan}&${gizra}`}>Grammar</Link></div>
+        </div>
         <div className='submitButton' id='nextButton' onClick={handleClick}>next</div>
         <div className="currentStats">
           <p>{`Questions: ${props.currentStats.current[0]}`}</p>

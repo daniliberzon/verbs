@@ -16,7 +16,10 @@ function StartPage() {
         </div>
       </div>
       <div className='footer'>
-        <p>footer</p>
+        <p>Created by Olga Liberzon </p>
+        <a className="linkImg" href="https://www.linkedin.com/in/liberzon-olga/" target="_blank"><img className="LinkedinLogo" src={require('../assets/LI-In-Bug.png')}/></a>
+        <p> & Daniil Liberzon </p>
+        <a className="linkImg" href="https://www.linkedin.com/in/dani-liberzon/" target="_blank"><img className="LinkedinLogo" src={require('../assets/LI-In-Bug.png')}/></a>
       </div>
     </div>
   )

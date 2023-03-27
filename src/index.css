@@ -64,7 +64,7 @@ tr:nth-child(even) {
   font-size: 20px;
 }
 .submitButton{
-  width: 30%;
+  width: 150px;
   border: 2px solid darkgreen;
   border-radius: 15px;
   margin: 15px auto 0 auto;
@@ -72,7 +72,7 @@ tr:nth-child(even) {
   background-color: darkgreen;
   color: white;
   height: 30px;
-  line-height: 30px;
+  /* line-height: 30px; */
 }
 .submitButton:hover{
   background-color: lightgreen;
@@ -94,9 +94,6 @@ tr:nth-child(even) {
   color: darkred;
 }
 
-.externalLink{
-  margin: 15px auto 20px auto;
-}
 th{
   background-color: lightblue;
   font-weight: bold;
@@ -112,10 +109,10 @@ th{
   width: 150px;
   padding: 5px;
   margin: 5px 5px 5px auto;
-  border: solid 1px darkred;
-  background-color: darkred;
+  border: solid 2px darkred;
+  /* background-color: darkred; */
   border-radius: 10px;
-  color: white;
+  /* color: white; */
   font-weight: bold;
   text-align: center;
 }
@@ -131,7 +128,7 @@ th{
   justify-content: space-around;
 }
 .menuButton{
-  width: 30%;
+  width: 200px;
   border: 2px solid darkgreen;
   border-radius: 15px;
   margin: 10px auto 0 auto;
@@ -139,7 +136,7 @@ th{
   background-color: darkgreen;
   color: white;
   height: 30px;
-  line-height: 30px;
+  /* line-height: 30px; */
 }
 .menuButton:hover{
   background-color: lightgreen;
@@ -202,6 +199,11 @@ th{
 .footer{
   background-color: lightgrey;
   font-size: small;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
 }
 .mainText{
   margin: 25px;
@@ -247,4 +249,24 @@ p{
   justify-content: center;
   border-radius: 15px;
   border: solid black 1px;
+}
+.extraInfo{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: center;
+  text-align: center;
+}
+.extraInfoTitle{
+  width: 100%;
+}
+.externalLink{
+  color:blue;
+  text-decoration: underline;
+  width: min-content;
+  margin: 0px 10px 0px 10px;
+}
+.LinkedinLogo{
+  height: 15px;
 }
