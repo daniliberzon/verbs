@@ -11,15 +11,9 @@ export const logSlice = createSlice({
         toggleIsLoggedIn: (state) => {
             state.isLoggedIn = !state.isLoggedIn;
         },
-        setUserEmail: (state, action) => {
-            state.userEmail = action.payload;
-        },
-        setUserPassword: (state, action) => {
-            state.userPassword = action.payload;
-        }
     }
 })
 
-export const { toggleIsLoggedIn, setUserEmail, setUserPassword } = logSlice.actions;
+export const { toggleIsLoggedIn } = logSlice.actions;
 
 export default logSlice.reducer;

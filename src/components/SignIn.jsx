@@ -1,44 +1,48 @@
-import { Button, Input } from '@chakra-ui/react';
+import { Box, Button, Heading, Input, Text } from '@chakra-ui/react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebase/firebase-config';
-import { setUserEmail, setUserPassword, toggleIsLoggedIn } from '../redux/logSlice';
+import { toggleIsLoggedIn } from '../redux/logSlice';
 import Navigation from './Navigation';
 
 function SignIn() {
-        // should they really be stored in Redux Store?
-        const [email, setEmail] = useState('');
-        const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loginErr, setLoginErr] = useState('');
 
-        const dispatch = useDispatch();
-        const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
     
-        const userLogin = async () => {
-            await signInWithEmailAndPassword(auth, email, password)
-            .then(() => {
-                dispatch(toggleIsLoggedIn());
-                dispatch(setUserEmail(email));
-                dispatch(setUserPassword(password));
-                navigate("/");
-            })
-            .catch(e => {
-              console.log(e);
-              alert("Incorrect login or password");
-            })
+  const userLogin = async () => {
+    await signInWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        dispatch(toggleIsLoggedIn());
+        navigate("/");
+      })
+      .catch(e => {
+        console.log(e);
+        setLoginErr('Incorrect login or password');
+      })
     }
 
-  return (
-    <>
-      <Navigation />
-      <Input mt={5} ml={2} type={'text'} placeholder={'Type your email'} value={email}
+return (
+  <>
+    <Navigation />
+    <Box align={'center'} mt={5}>
+      <Heading as='h2'>Sign in</Heading>
+      <Input w='50%' mt={5} ml={2} mb={2} borderWidth='1px' borderColor='gray' borderRadius='10px'
+                    type={'text'} placeholder={'Type your email'} value={email}
                     onChange={e => setEmail(e.target.value)}/>
-      <Input mt={2} mb={5} ml={2} type={'password'} placeholder={'Type your password'} value={password}
+      <Input w='50%' mt={5} ml={2} mb={2} borderWidth='1px' borderColor='gray' borderRadius='10px'
+                    type={'password'} placeholder={'Type your password'} value={password}
                     onChange={e => setPassword(e.target.value)}/>
-      <Button ml={5} mr={5} onClick={() => userLogin(email, password)}>Login</Button>
+      <Text color='red'>{loginErr}</Text>
+      <Button w='150px' display={'block'} ml={5} mr={5} mt={5} background={'#3EB489'} color={'black'} borderRadius='10px'
+                    onClick={() => userLogin(email, password)}>Sign In</Button>
+    </Box>
     </>
-    
   )
 }
 
