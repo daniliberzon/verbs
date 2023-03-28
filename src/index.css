@@ -21,12 +21,12 @@ a:link{
   text-decoration: none;
   color: blue;
 }
-table{
+/* table{
   width : 100%;
-}
-tr:nth-child(even) {
+} */
+/* tr:nth-child(even) {
   background-color: lightcyan;
-}
+} */
 .quizSettings{
   text-align: center;
 }
@@ -233,7 +233,7 @@ p{
 
 .dynamics{
   height: 50%;
-  padding: 10px;
+  padding: 15px;
 }
 .logout:hover{
   color: red;
@@ -269,4 +269,41 @@ p{
 }
 .LinkedinLogo{
   height: 15px;
+}
+.StatsTable{
+  padding:15px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  background-color: antiquewhite;
+  border-radius: 20px;
+}
+.statsTableHeader{
+  background-color: #3EB489;
+  font-weight: bold;
+}
+.StatsTable tr:last-child td:first-child {
+  border-bottom-left-radius: 20px;
+}
+.StatsTable tr:first-child td:last-child {
+  border-top-right-radius: 20px;
+}
+.StatsTable tr:last-child td:last-child {
+  border-bottom-right-radius: 20px;
+}
+.StatsTable tr:first-child td:first-child {
+  border-top-left-radius: 20px;
+}
+.NA{
+  background-color: lightgray;
+}
+.bad{
+  background-color: #FED6BC;
+}
+.moderate{
+  background-color: #FFFADD;
+}
+.good{
+  background-color: #C3FBD8;
 }
