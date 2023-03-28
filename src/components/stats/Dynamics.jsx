@@ -20,7 +20,7 @@ function Dynamics() {
     }
     let d = d_min
     let v = 0
-    while (d <= d_max + 24*60*60*1000){
+    while (d <= d_max+12*60*60*1000){
         let date = new Date(d)
         let day = date.getDate();
         let month = date.getMonth() + 1;
@@ -28,7 +28,7 @@ function Dynamics() {
         let dateString  = `${year}-${month}-${day}`
         let s
         if (dateString in dyn){
-            s = dyn[dateString]
+            s = dyn[dateString] + v
             v = s
         } else {
             s = v
@@ -36,7 +36,6 @@ function Dynamics() {
         data.push({date: dateString, score: s})
         d += 24*60*60*1000
     }
-    
     
     return (
         <ResponsiveContainer width="100%" height="100%">
