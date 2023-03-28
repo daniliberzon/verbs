@@ -20,7 +20,7 @@ function Dynamics() {
     }
     let d = d_min
     let v = 0
-    while (d <= d_max+12*60*60*1000){
+    while (d < d_max + 24*60*60*1000){
         let date = new Date(d)
         let day = date.getDate();
         let month = date.getMonth() + 1;
