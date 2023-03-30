@@ -65,11 +65,11 @@ function QuizSettings() {
                   <div className='settings'>
                     <Heading size="md" align="center" w="100%">Choose test settings:</Heading>
                     <div className='set tenses'>
-                      <Heading size="sm" mb={2}>Tenses:</Heading>
+                      <Heading size="sm" mb={2} color="darkgreen">Tenses:</Heading>
                         {tenses.map((x,i)=><div className={'settingOption tense'+`${chosenTenses[i]?' chosenSetting':''}`} key ={i} id={i} onClick={createHandleClick(chosenTenses,setChosenTenses)}>{x}</div>)}
                     </div>
                     <div className='set binyanim'>
-                      <Heading size="sm" mb={2}>Binyanim:</Heading>
+                      <Heading size="sm" mb={2} color="darkgreen">Binyanim:</Heading>
                         {binyanim.map((x,i)=><div className={'settingOption binyan'+`${chosenBinyanim[i]?' chosenSetting':''}`} key={i} id={i} onClick={createHandleClick(chosenBinyanim,setChosenBinyanim)}>{x}</div>)}
                     </div>
                   </div>

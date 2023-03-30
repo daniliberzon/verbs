@@ -143,13 +143,12 @@ th{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 .set{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  padding: 10px;
-  margin: auto;
+  padding-top: 10px;
 }
 .settingsHeader{
   width: 100%;
