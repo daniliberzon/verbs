@@ -5,7 +5,7 @@ import GrammarCardAdditionalInfo from './GrammarCardAdditionalInfo';
 
 function GrammarCard(props) {
   const [isLargerThan900] = useMediaQuery('(min-width: 900px)');
-  let tableWidth = isLargerThan900 ? "60%" : "80%";
+  let tableWidth = isLargerThan900 ? "55%" : "80%";
 
   return (
     <Box align="center">
