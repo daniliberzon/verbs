@@ -61,7 +61,7 @@ function Grammar() {
       <>
         <Navigation />
 
-        <Box w="100%" mt={2} mb={5} ml={2}>
+        <Box w="100%" mt={2} mb={5} ml={2} pr={2}>
           <Heading mb={2}>Grammar reference</Heading>
           <p>They say that verb conjugation is the hardest theme for an aspiring Hebrew-learner.
             The reason could be that there are a lot of exceptions that may affect spelling and vocalization of different forms of Hebrew verbs.</p>

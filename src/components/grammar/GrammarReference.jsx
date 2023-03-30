@@ -11,7 +11,7 @@ function GrammarReference() {
   return (
     <SimpleGrid columns={numCol} spacing={10} mb={10} ml={10} mr={10}>
       <Box h="100%" bg="#3EB489" borderRadius="20" align="center">
-        <Heading pt={2}>Root (שֹׁרֶשׁ) and Gizra (גִּזְרָה)</Heading>
+        <Heading pt={2} ml={2} mr={2}>Root (שֹׁרֶשׁ) and Gizra (גִּזְרָה)</Heading>
         <Box w="90%" bg="white" mt={4} mb={2} opacity="90%" borderRadius="20">
           <p><i>Roots</i> are "skeletons" of consonants from which the typical Hebrew word is built. Every verb has a root, and most of verbs are based on <i>three-letter roots:</i></p>
           <Image src={ROOT_EXAMPLE_IMG} alt="root example" mt={2} mb={2} />
@@ -24,7 +24,7 @@ function GrammarReference() {
       </Box>
 
       <Box h="100%" bg="#3EB489" borderRadius="20" align="center">
-        <Heading pt={2}>Binyan (בִּנְיָן)</Heading>
+        <Heading pt={2} ml={2} mr={2}>Binyan (בִּנְיָן)</Heading>
         <Box w="90%" bg="white" mt={4} mb={4} opacity="90%" borderRadius="20">
           <p>Literally meaning <i>"construction"</i>, a <em>binyan</em> is the base pattern of a verb in Hebrew. <em>Binyan</em> is mounted on a root skeleton of the word.</p>
           <p>Every verb must adhere to one of <i>the seven patterns (binyanim)</i>:</p>
