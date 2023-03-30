@@ -17,10 +17,10 @@ code {
   padding: 10px;
   font-family: Helvetica;
 }
-a:link{
+/* a:link{
   text-decoration: none;
   color: blue;
-}
+} */
 /* table{
   width : 100%;
 } */
@@ -216,6 +216,9 @@ th{
 a.active{
   text-decoration: underline;
   color:bisque;
+}
+.NavLink a{
+  color:white;
 }
 .NavLink:hover{
   text-decoration: underline;
