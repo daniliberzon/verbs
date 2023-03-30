@@ -21,12 +21,12 @@ function StatsTable() {
   },[])
   if(stats){
     tableContent = <table className='StatsTable'><tbody>
-      <tr>
+      <tr key="StatsHeader">
       <td className='statsTableHeader' key="corner"></td>
         {tenses.map((e)=>{return(<td className='statsTableHeader' key={e}>{e}</td>)})}
       </tr>
       {binyanim.map((binyan)=>{return(
-      <tr>
+      <tr key={binyan}>
         <td className='statsTableHeader' key={binyan}>{binyan}</td>
         {tenses.map((t)=>{
           let scores = Math.round(stats[t.toLowerCase()+' '+binyan][0])
