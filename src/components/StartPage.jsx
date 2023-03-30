@@ -1,3 +1,4 @@
+import { Heading } from '@chakra-ui/react';
 import React from 'react'
 import Navigation from './Navigation';
 
@@ -7,7 +8,7 @@ function StartPage() {
       <Navigation />
       <div className='mainPage'>
         <div className='mainText'>
-          <p className='mainHeader'>Paul Binyan</p>
+          <Heading mb={2}>Paul Binyan</Heading>
           <p>Welcome to Paul Binyan, the perfect website for anyone looking to master their knowledge of Hebrew verb grammar!</p>
           <p>Our free and user-friendly platform offers a fun and engaging way to practice conjugation of verbs in Hebrew. Our interactive quiz format provides you with an infinitive and prompts you to select the correct translation and form of the definite tense, with given number and gender. With four options to choose from, you'll have the opportunity to test your knowledge and improve your understanding of this important aspect of Hebrew grammar.</p>
           <p>At Paul Binyan, we believe in providing our users with the flexibility to tailor their learning experience to their specific needs. You can choose which Binyans and tenses you want to practice, allowing you to focus on the areas where you need the most help. And if you need a little extra guidance, our short grammar reference tables provide you with patterns for different tenses.</p>

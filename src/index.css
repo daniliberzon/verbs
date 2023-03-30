@@ -17,16 +17,7 @@ code {
   padding: 10px;
   font-family: Helvetica;
 }
-/* a:link{
-  text-decoration: none;
-  color: blue;
-} */
-/* table{
-  width : 100%;
-} */
-/* tr:nth-child(even) {
-  background-color: lightcyan;
-} */
+
 .quizSettings{
   text-align: center;
 }
@@ -162,6 +153,7 @@ th{
 }
 .settingsHeader{
   width: 100%;
+  font-weight: bold;
 }
 .settingOption{
   border: 1px solid lightslategray;
@@ -211,6 +203,11 @@ th{
   background-color: white;
   opacity: 85%;
   border-radius: 15px;
+  text-align: justify;
+}
+.menuText{
+  padding: 15px;
+  background-color: white;
   text-align: justify;
 }
 a.active{

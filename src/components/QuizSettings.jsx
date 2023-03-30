@@ -5,6 +5,7 @@ import { readString } from 'react-papaparse';
 import Quiz from './Quiz';
 import { tenses, binyanim } from '../utils/utils';
 import Navigation from './Navigation';
+import { Heading } from '@chakra-ui/react';
 
 function QuizSettings() {
   const [data, setData]  = useState()
@@ -58,17 +59,17 @@ function QuizSettings() {
   
 
   const menu = <div className='menu'>
-                  <div className='mainText'>
+                  <div className='menuText'>
                   Customize your Grammar Quiz by selecting the specific tenses and binyans you want to be tested on. You can choose multiple options for each category. If no options are selected, the quiz will cover all available options. To learn more about binyans, check out our Grammar section.
                   </div>
                   <div className='settings'>
-                    <div className='settingsHeader'>Choose test settings:</div>
+                    <Heading size="md" align="center" w="100%">Choose test settings:</Heading>
                     <div className='set tenses'>
-                      <div>Tenses:</div>
+                      <Heading size="sm" mb={2}>Tenses:</Heading>
                         {tenses.map((x,i)=><div className={'settingOption tense'+`${chosenTenses[i]?' chosenSetting':''}`} key ={i} id={i} onClick={createHandleClick(chosenTenses,setChosenTenses)}>{x}</div>)}
                     </div>
                     <div className='set binyanim'>
-                      <div>Binyanim:</div>
+                      <Heading size="sm" mb={2}>Binyanim:</Heading>
                         {binyanim.map((x,i)=><div className={'settingOption binyan'+`${chosenBinyanim[i]?' chosenSetting':''}`} key={i} id={i} onClick={createHandleClick(chosenBinyanim,setChosenBinyanim)}>{x}</div>)}
                     </div>
                   </div>
