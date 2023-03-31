@@ -13,6 +13,7 @@ function QuizSettings() {
   const [page, setPage] = useState(0)
   const [chosenTenses, setChosenTenses] = useState({})
   const [chosenBinyanim, setChosenBinyanim] = useState({})
+  let dataCSVstored
 
   useEffect(() => {
     const papaConfig1 = {
@@ -35,7 +36,12 @@ function QuizSettings() {
             return []
             },
         }
-    readString(dataCSV, papaConfig1)
+    dataCSVstored = localStorage.getItem("dataCSV")
+    if (dataCSVstored){
+      setData(JSON.parse(dataCSVstored))
+    } else {
+      readString(dataCSV, papaConfig1)
+    }
     readString(columnsCSV, papaConfig2)
   },[]);
   function changePage(n){
@@ -76,6 +82,9 @@ function QuizSettings() {
                   <div className='menuButton' onClick={changePage(1)}>Start Test</div>
               </div>
   if (data && columns){
+    if(!dataCSVstored){
+      localStorage.setItem("dataCSV", JSON.stringify(data))
+    }
     let content
           { {switch (page) {
         case 0:
