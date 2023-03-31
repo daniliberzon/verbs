@@ -12,7 +12,7 @@ function GrammarCard(props) {
       <Heading as="h1" m={7} color="darkslategrey">
         Tense: {props.tense}, Binyan: {props.binyan}, Gizra: {props.gizra}
       </Heading>
-      <GrammarCardAdditionalInfo binyan={props.binyan} m={2} />
+      <GrammarCardAdditionalInfo binyan={props.binyan} tense={props.tense} m={2} />
       <Image w={tableWidth} src={grammarTables[`${props.tense}_${props.binyan}_${props.gizra}`]} alt="table" />
     </Box>
   )

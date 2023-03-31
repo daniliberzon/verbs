@@ -116,6 +116,7 @@ const LAMED_GRONIYOT = `3rd groniyot`;
 
 const GRONIYOTS = ["א", "ה", "ח", "ע"];
 const IUD_HEI_NUN = ["י", "ה", "נ"];
+const EFAL_EXCEPTIONS = ["ל - מ - ד", "ר - כ - ב", "ל - ב - שׁ", "שׁ - כ - ב", "ג - ד - ל"];
 
 export const menuStructure = {
     Present: {
@@ -250,15 +251,11 @@ export const grammarTables = {
     [`Imperative_NIF'AL_${AYN_GRONIYOT}`]: IMPERATIVE_NIFAL_AYN_GRONIYOT_IMG,
 }
 
-// const testTense = "Past";
-// const testBinyan = "PA'AL";
-// const testRoot = "ע - מ - ד";
-
 export const findGizra = (tense, binyan, root) => {
     if (root.length > 9)
         return FOUR_LETTERS;
 
-    if (root[root.length - 1] === "ה" && (binyan === "PA'AL" || binyan === "PI'El" || binyan === "HITPA'EL"))
+    if (root[root.length - 1] === "ה" && (binyan === "PA'AL" || binyan === "PI'EL" || binyan === "HITPA'EL"))
         return LAMED_HEI;
 
     if (GRONIYOTS.find((el) => el === root[0]))
@@ -296,6 +293,9 @@ export const findGizra = (tense, binyan, root) => {
     if (GRONIYOTS.find((el) => el === root[root.length-1]) && (tense === "Future") && (binyan === "PA'AL"))
         return SHLEMIM_EFAL;
     
+    if ((tense === "Future") && (binyan === "PA'AL") && (EFAL_EXCEPTIONS.find((el) => el === root)))
+        return SHLEMIM_EFAL;
+    
     if ((root[root.length-1] === "ח" || root[root.length-1] === "ע") && tense === "Present" && ((binyan === "PA'AL") || (binyan === "NIF'AL")))
         return LAMED_HET_AYN;
         
@@ -307,10 +307,4 @@ export const findGizra = (tense, binyan, root) => {
         return SHLEMIM_EFOL;
 
     return SHLEMIM;
-} 
-
-// console.log(findGizra(testTense, testBinyan, testRoot));
-
-// export const tensesForms = {'Past': PAST,'Present':PRESENT, 'Future':FUTURE, 'Imperative':IMPERATIVE}
-// export const tenses = ['Past','Present', 'Future', 'Imperative']
-// export const binyanim = ["PA'AL", "PI'EL", "HIF'IL", "HITPA'EL", "NIF'AL"]
+}
