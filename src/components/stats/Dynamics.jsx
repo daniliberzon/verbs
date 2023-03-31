@@ -14,17 +14,19 @@ function Dynamics() {
     let d_min = -1
     let d_max = -1
     for (const d in dyn){
-        let date = Date.parse(d)
+        let dateArr = d.split(/[- :]/)
+        let date = new Date(dateArr[0], dateArr[1]-1, dateArr[2])
         d_min = d_min<0 ? date: Math.min(d_min, date)
         d_max = Math.max(d_max, date)
     }
     let d = d_min
     let v = 0
+
     while (d < d_max + 24*60*60*1000){
         let date = new Date(d)
-        let day = date.getDate();
-        let month = date.getMonth() + 1;
-        let year = date.getFullYear();
+        let day = date.getDate()
+        let month = date.getMonth() + 1
+        let year = date.getFullYear()
         let dateString  = `${year}-${month}-${day}`
         let s
         if (dateString in dyn){
@@ -36,7 +38,7 @@ function Dynamics() {
         dynData.push({date: dateString, score: s})
         d += 24*60*60*1000
     }
-    console.log(dynData) // To find problem on iOs
+    
     return (
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
