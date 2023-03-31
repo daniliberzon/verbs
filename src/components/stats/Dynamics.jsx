@@ -10,7 +10,7 @@ function Dynamics() {
       getUid().then(id=>getAllDynamicsStats(id).then(data=>setDyn(data.dynamicStat)))
     },[])
     if(dyn){
-    let data = []
+    let dynData = []
     let d_min = -1
     let d_max = -1
     for (const d in dyn){
@@ -33,16 +33,14 @@ function Dynamics() {
         } else {
             s = v
         }
-        data.push({date: dateString, score: s})
+        dynData.push({date: dateString, score: s})
         d += 24*60*60*1000
     }
-    
+    console.log(dynData) // To find problem on iOs
     return (
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
-            width={500}
-            height={300}
-            data={data}
+            data={dynData}
             margin={{
               top: 5,
               right: 30,
