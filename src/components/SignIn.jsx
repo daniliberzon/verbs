@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebase/firebase-config';
-import { toggleIsLoggedIn } from '../redux/logSlice';
+import { setIsLoggedIn } from '../redux/logSlice';
 import Navigation from './Navigation';
 
 function SignIn() {
@@ -18,7 +18,7 @@ function SignIn() {
   const userLogin = async () => {
     await signInWithEmailAndPassword(auth, email, password)
       .then(() => {
-        dispatch(toggleIsLoggedIn());
+        dispatch(setIsLoggedIn(1))
         navigate("/");
       })
       .catch(e => {

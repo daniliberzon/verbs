@@ -1,16 +1,16 @@
-import { signOut } from 'firebase/auth';
-import React from 'react';
+import { signOut, getAuth,onAuthStateChanged } from 'firebase/auth';
+import React, { useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { auth } from '../firebase/firebase-config';
-import { toggleIsLoggedIn } from '../redux/logSlice';
+import { setIsLoggedIn, toggleIsLoggedIn } from '../redux/logSlice';
 
 function Navigation() {
     let menu;
     const isLoggedIn = useSelector((state) => state.log.isLoggedIn);
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    
     const userLogout = async () => {
         await signOut(auth)
             .then(() => {
@@ -20,8 +20,17 @@ function Navigation() {
             })
             .catch(e => console.log(e))
     }
-
-    if (isLoggedIn){
+    useEffect(()=>{
+        if(isLoggedIn===-1){
+            const auth = getAuth();
+            onAuthStateChanged(auth, (user) => {
+            if (user) {
+                dispatch(setIsLoggedIn(1))
+            } else {
+                dispatch(setIsLoggedIn(0))
+            }})
+        }},[])
+    if (isLoggedIn===1){
         menu = (<div className='navigation'>
                     <NavLink className='NavLink' to="/">Home</NavLink>
                     <NavLink className='NavLink' to="/quiz">Quiz</NavLink>

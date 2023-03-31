@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useSelector} from 'react-redux'
+import { useDispatch, useSelector} from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import Navigation from './Navigation'
 import Dynamics from './stats/Dynamics'
@@ -8,9 +8,12 @@ import StatsTable from './stats/StatsTable'
 function Account() {
   const isLoggedIn = useSelector((state) => state.log.isLoggedIn)
   const navigate = useNavigate();
-  useEffect(()=>{if(!isLoggedIn) navigate("/")})
-  if(!isLoggedIn){
-    return (<div>You are not logged in</div>)
+  useEffect(()=>{if(isLoggedIn===0) navigate("/")})
+  if(isLoggedIn!=1){
+    return (<div>
+        <Navigation />
+        <div>Loading...</div>
+      </div>)
   }
   return (
     <div className='page'>
