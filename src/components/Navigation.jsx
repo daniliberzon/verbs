@@ -3,7 +3,7 @@ import React, { useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { auth } from '../firebase/firebase-config';
-import { setIsLoggedIn, toggleIsLoggedIn } from '../redux/logSlice';
+import { setIsLoggedIn} from '../redux/logSlice';
 
 function Navigation() {
     let menu;
@@ -14,7 +14,7 @@ function Navigation() {
     const userLogout = async () => {
         await signOut(auth)
             .then(() => {
-                dispatch(toggleIsLoggedIn());
+                dispatch(setIsLoggedIn(0))
                 navigate("/");
                 alert("Logged Out!");
             })
