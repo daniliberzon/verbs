@@ -63,7 +63,7 @@ function Grammar() {
 
         <Box w="100%" mt={2} mb={5} ml={2} pr={2}>
           <Heading mb={2}>Grammar reference</Heading>
-          <p>They say that verb conjugation is the hardest theme for an aspiring Hebrew-learner.
+          <p>They say that verb conjugation is the hardest topic for an aspiring Hebrew-learner.
             The reason could be that there are a lot of exceptions that may affect spelling and vocalization of different forms of Hebrew verbs.</p>
           <p>On this page we'll highlight only the key points which are important for understanding of basic rules of verb conjugation in Hebrew.
             Mind that it's just a short grammar reference. For better understanding of the topic consult books on Hebrew Grammar.
