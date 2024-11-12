@@ -176,19 +176,22 @@ th{
 .navigation{
   display: flex;
   flex-direction: row;
-  background-color: darkslategrey;
+  background-color: #8888AC;
+  border-bottom: 5pt white solid;
   color: white;
   justify-content: space-around;
-  padding: 10px;
+  padding: 1em;
   align-items: center;
 }
 .mainPage{
-  flex:1;
+  display: flex;
+  flex: 1;
   background-image: url("./assets/background.jpg");
-  background-size: cover;
+  background-size: 50%;
+  background-repeat: repeat;
 }
 .footer{
-  background-color: lightgrey;
+  min-height: 5vh;
   font-size: small;
   display: flex;
   flex-direction: row;
@@ -197,12 +200,29 @@ th{
   align-items: center;
 }
 .mainText{
-  margin: 25px;
-  padding: 15px;
+  margin: 2em;
+  padding: 1em;
+  width: 50vw;
   background-color: white;
-  opacity: 85%;
+  opacity: 95%;
   border-radius: 15px;
   text-align: justify;
+}
+@media (max-width: 900px) {
+  .mainText {
+    width: 85vw;
+  }
+  .features {
+    display: none;
+  }
+}
+.features {
+  height: 50%;
+  display: flex;
+  justify-items: center;
+}
+.featureArticle {
+  width: 50%;
 }
 .menuText{
   padding: 15px;
