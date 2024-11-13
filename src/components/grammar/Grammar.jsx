@@ -73,7 +73,7 @@ function Grammar() {
         <GrammarReference />
 
         <Box id="grammarTable" h="100vh">
-          <Box bg="#3EB489" w="100%" minH={menuHeight} color="white" align="center">
+          <Box bg="#88ac88" w="100%" minH={menuHeight} color="white" align="center">
             <SimpleGrid columns={numColMenu} ml={10} mr={10}>
               <GrammarMenuItem
                 stateName="Tense"

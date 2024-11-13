@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector} from 'react-redux'
+import { useSelector} from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import Navigation from './Navigation'
 import Dynamics from './stats/Dynamics'
 import StatsTable from './stats/StatsTable'
+import { CircularProgress } from '@chakra-ui/react'
 
 function Account() {
   const isLoggedIn = useSelector((state) => state.log.isLoggedIn)
@@ -12,7 +13,7 @@ function Account() {
   if(isLoggedIn!=1){
     return (<div>
         <Navigation />
-        <div>Loading...</div>
+        <CircularProgress isIndeterminate color="green"></CircularProgress>
       </div>)
   }
   return (

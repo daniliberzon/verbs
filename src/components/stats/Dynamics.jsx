@@ -2,6 +2,7 @@ import { React, useEffect, useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { getUid } from "../../firebase/auth-service";
 import {getAllDynamicsStats} from "../../firebase/stats-service"
+import { CircularProgress } from '@chakra-ui/react';
 
 function Dynamics() {
     const [dyn, setDyn] = useState()
@@ -59,7 +60,7 @@ function Dynamics() {
           </LineChart>
         </ResponsiveContainer>
       )} else {
-        return <div>Loading...</div>
+        return <CircularProgress isIndeterminate color="green"></CircularProgress>
       }
 
 }

@@ -5,7 +5,7 @@ import { readString } from 'react-papaparse';
 import Quiz from './Quiz';
 import { tenses, binyanim } from '../utils/utils';
 import Navigation from './Navigation';
-import { Box, Button, Heading } from '@chakra-ui/react';
+import { Box, Button, Grid, Heading } from '@chakra-ui/react';
 
 function QuizSettings() {
   const [data, setData]  = useState()
@@ -69,17 +69,21 @@ function QuizSettings() {
                   <div className='menuText'>
                   Customize your Grammar Quiz by selecting the specific tenses and binyans you want to be tested on. You can choose multiple options for each category. If no options are selected, the quiz will cover all available options. To learn more about binyans, check out our Grammar section.
                   </div>
-                  <div className='settings'>
-                    <Heading as="h2" size="md" align="center" w="100%">Choose test settings:</Heading>
+                  <Box as="section" className='settings' boxShadow="xl" borderRadius="md">
+                    <Heading as="h2" size="md" align="center" w="100%">Choose test settings</Heading>
                     <div className='set tenses'>
                       <Heading size="sm" mb={2} color="darkgreen">Tenses:</Heading>
+                      <Grid gridTemplateColumns='50% 50%'>
                         {tenses.map((x,i)=><div className={'settingOption tense'+`${chosenTenses[i]?' chosenSetting':''}`} key ={i} id={i} onClick={createHandleClick(chosenTenses,setChosenTenses)}>{x}</div>)}
+                      </Grid>
                     </div>
                     <div className='set binyanim'>
                       <Heading size="sm" mb={2} color="darkgreen">Binyanim:</Heading>
+                      <Grid gridTemplateColumns='50% 50%'>
                         {binyanim.map((x,i)=><div className={'settingOption binyan'+`${chosenBinyanim[i]?' chosenSetting':''}`} key={i} id={i} onClick={createHandleClick(chosenBinyanim,setChosenBinyanim)}>{x}</div>)}
+                      </Grid> 
                     </div>
-                  </div>
+                  </Box>
                   <Button className='menuButton'
                     onClick={changePage(1)}
                     variant="solid"

@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { tenses, binyanim} from '../../utils/utils'
 import { getUid } from "../../firebase/auth-service";
 import {getStatsTable} from "../../firebase/stats-service"
+import { CircularProgress } from '@chakra-ui/react';
 
 function StatsTable() {
-  let tableContent = "Loading..."
+  let tableContent = <CircularProgress isIndeterminate color="green"></CircularProgress>
   const [stats, setStats] = useState()
   function tdClass(score, accuracy){
     if (score < 10)

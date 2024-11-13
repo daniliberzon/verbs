@@ -51,7 +51,7 @@ function SignUp() {
     <div>
         <Navigation />
         <Box align={'center'} mt={5}>
-            <Heading as='h2'>Create new account</Heading>
+            <Heading as='h2'>Create a new account</Heading>
             <Input w='50%' mt={5} ml={2} mb={2} borderWidth='1px' borderColor='gray' borderRadius='10px'
                     type={'email'} placeholder={'Type your email'} value={email}
                     onChange={e => setEmail(e.target.value)} onBlur={checkEmail}/>
@@ -62,7 +62,7 @@ function SignUp() {
                     onChange={e => setPassword(e.target.value)} onBlur={checkPassword}/>
             <Text color='red'>{passwordErr}</Text>
 
-            <Button w='150px' display={'block'} ml={5} mr={5} mt={5} background={'#3EB489'} color={'black'} borderRadius='10px'
+            <Button display={'block'} ml={5} mr={5} mt={5} background={'#3EB489'} color={'black'} borderRadius='10px'
                     onClick={() => handleRegistration(email, password)}>Registration</Button>
         </Box>
     </div>
