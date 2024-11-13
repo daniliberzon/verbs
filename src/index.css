@@ -114,11 +114,13 @@ th{
   color: black;
 }
 .menu{
+  height: 90vh;
+  background-image: url("./assets/letters_background_2.png");
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   padding: 15px;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
 }
 .menuButton{
   width: 200px;
@@ -137,7 +139,7 @@ th{
 .settings{
   width: 100%;
   /* border: 1px solid black; */
-  background-color: #FFFADD;
+  background-color: white;
   border-radius: 10px;
   margin: 10px;
   padding: 15px;
@@ -158,17 +160,18 @@ th{
   font-weight: bold;
 }
 .settingOption{
-  border: 1px solid lightslategray;
+  color: darkslategrey;
+  border: 2px solid lightslategray;
   border-radius: 5px;
   padding: 5px;
   margin: 5px;
 }
 .settingOption:hover{
-  background-color: lightseagreen;
+  background-color: #88ac88;
 }
 
 .chosenSetting{
-  background-color: lightseagreen;
+  background-color: #88ac88;
 }
 .page{
   display: flex;

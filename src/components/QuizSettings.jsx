@@ -65,30 +65,38 @@ function QuizSettings() {
   
 
   const menu = <div className='menu'>
-                  <Heading as="h1" mb={2} mt={2}>Quiz setup</Heading>
-                  <div className='menuText'>
-                  Customize your Grammar Quiz by selecting the specific tenses and binyans you want to be tested on. You can choose multiple options for each category. If no options are selected, the quiz will cover all available options. To learn more about binyans, check out our Grammar section.
-                  </div>
-                  <Box as="section" className='settings' boxShadow="xl" borderRadius="md">
-                    <Heading as="h2" size="md" align="center" w="100%">Choose test settings</Heading>
-                    <div className='set tenses'>
-                      <Heading size="sm" mb={2} color="darkgreen">Tenses:</Heading>
-                      <Grid gridTemplateColumns='50% 50%'>
-                        {tenses.map((x,i)=><div className={'settingOption tense'+`${chosenTenses[i]?' chosenSetting':''}`} key ={i} id={i} onClick={createHandleClick(chosenTenses,setChosenTenses)}>{x}</div>)}
-                      </Grid>
-                    </div>
-                    <div className='set binyanim'>
-                      <Heading size="sm" mb={2} color="darkgreen">Binyanim:</Heading>
-                      <Grid gridTemplateColumns='50% 50%'>
-                        {binyanim.map((x,i)=><div className={'settingOption binyan'+`${chosenBinyanim[i]?' chosenSetting':''}`} key={i} id={i} onClick={createHandleClick(chosenBinyanim,setChosenBinyanim)}>{x}</div>)}
-                      </Grid> 
+                  <Box textAlign="left" bgColor="white">
+                    <Heading as="h1" mb={2} mt={2}>Quiz setup</Heading>
+                    <div className='menuText'>
+                    Customize your Grammar Quiz by selecting the specific tenses and binyans you want to be tested on. You can choose multiple options for each category. If no options are selected, the quiz will cover all available options. To learn more about binyans, check out our Grammar section.
                     </div>
                   </Box>
-                  <Button className='menuButton'
-                    onClick={changePage(1)}
-                    variant="solid"
-                  >
-                    Start Test</Button>
+
+                  <Box bgColor="white" boxShadow="xl" borderRadius="md" minH="60vh">
+                    <Box as="section" className='settings'>
+                      <Heading as="h2" size="md" align="center" w="100%">Choose test settings</Heading>
+                      <div className='set tenses'>
+                        <Heading size="sm" mb={2} color="darkgreen">Tenses:</Heading>
+                        <Grid gridTemplateColumns='50% 50%'>
+                          {tenses.map((x,i)=><div className={'settingOption tense'+`${chosenTenses[i]?' chosenSetting':''}`} key ={i} id={i} onClick={createHandleClick(chosenTenses,setChosenTenses)}>{x}</div>)}
+                        </Grid>
+                      </div>
+                      <div className='set binyanim'>
+                        <Heading size="sm" mb={2} color="darkgreen">Binyanim:</Heading>
+                        <Grid gridTemplateColumns='50% 50%'>
+                          {binyanim.map((x,i)=><div className={'settingOption binyan'+`${chosenBinyanim[i]?' chosenSetting':''}`} key={i} id={i} onClick={createHandleClick(chosenBinyanim,setChosenBinyanim)}>{x}</div>)}
+                        </Grid> 
+                      </div>
+                    </Box>
+                    <Button className='menuButton'
+                      onClick={changePage(1)}
+                      variant="solid"
+                      mb={10}
+                    >
+                      Start Test
+                    </Button>
+                  </Box>
+
               </div>
   if (data && columns){
     if(!dataCSVstored){

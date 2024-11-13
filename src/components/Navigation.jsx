@@ -16,7 +16,6 @@ function Navigation() {
             .then(() => {
                 dispatch(setIsLoggedIn(0))
                 navigate("/");
-                alert("Logged Out!");
             })
             .catch(e => console.log(e))
     }
