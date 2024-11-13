@@ -5,6 +5,7 @@ import {findGizra} from '../utils/constantsGrammar'
 import { addDynamicsStat, getAllDynamicsStats, getStatsTable, addStatsTable } from '../firebase/stats-service'
 import { getUid } from '../firebase/auth-service'
 import { useSelector } from 'react-redux'
+import { Button } from '@chakra-ui/react'
 
 function Answer(props) {
     const isLoggedIn = useSelector((state) => state.log.isLoggedIn)
@@ -77,7 +78,7 @@ function Answer(props) {
           <div className='externalLink'><a href={props.data[props.rightAnswer][1]}  target="_blank" rel="noopener noreferrer">Pealim.com</a></div>
           <div className='externalLink'><Link target="_blank" to={`../grammar?${tense}&${binyan}&${gizra}`}>Grammar</Link></div>
         </div>
-        <div className='submitButton' id='nextButton' onClick={handleClick}>Next</div>
+        <Button className='submitButton' id='nextButton' onClick={handleClick}>Next</Button>
         <div className="currentStats">
           <p>{`Questions: ${props.currentStats.current[0]}`}</p>
           <p>{`Scores: ${Math.round(props.currentStats.current[1])}`}</p>

@@ -5,7 +5,7 @@ import { readString } from 'react-papaparse';
 import Quiz from './Quiz';
 import { tenses, binyanim } from '../utils/utils';
 import Navigation from './Navigation';
-import { Heading } from '@chakra-ui/react';
+import { Box, Button, Heading } from '@chakra-ui/react';
 
 function QuizSettings() {
   const [data, setData]  = useState()
@@ -65,11 +65,12 @@ function QuizSettings() {
   
 
   const menu = <div className='menu'>
+                  <Heading as="h1" mb={2} mt={2}>Quiz setup</Heading>
                   <div className='menuText'>
                   Customize your Grammar Quiz by selecting the specific tenses and binyans you want to be tested on. You can choose multiple options for each category. If no options are selected, the quiz will cover all available options. To learn more about binyans, check out our Grammar section.
                   </div>
                   <div className='settings'>
-                    <Heading size="md" align="center" w="100%">Choose test settings:</Heading>
+                    <Heading as="h2" size="md" align="center" w="100%">Choose test settings:</Heading>
                     <div className='set tenses'>
                       <Heading size="sm" mb={2} color="darkgreen">Tenses:</Heading>
                         {tenses.map((x,i)=><div className={'settingOption tense'+`${chosenTenses[i]?' chosenSetting':''}`} key ={i} id={i} onClick={createHandleClick(chosenTenses,setChosenTenses)}>{x}</div>)}
@@ -79,7 +80,11 @@ function QuizSettings() {
                         {binyanim.map((x,i)=><div className={'settingOption binyan'+`${chosenBinyanim[i]?' chosenSetting':''}`} key={i} id={i} onClick={createHandleClick(chosenBinyanim,setChosenBinyanim)}>{x}</div>)}
                     </div>
                   </div>
-                  <div className='menuButton' onClick={changePage(1)}>Start Test</div>
+                  <Button className='menuButton'
+                    onClick={changePage(1)}
+                    variant="solid"
+                  >
+                    Start Test</Button>
               </div>
   if (data && columns){
     if(!dataCSVstored){
@@ -99,12 +104,12 @@ function QuizSettings() {
       }} }
 
     return (
-    <div className='page'>
+    <Box className='page'>
       <Navigation />
       <div className="quizSettings">
         {content}
       </div>
-    </div>
+    </Box>
     )} else {
       return (
         <div>Loading...</div>

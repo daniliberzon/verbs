@@ -55,15 +55,17 @@ code {
   font-size: 20px;
 }
 .submitButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 150px;
+  min-height: 2.5em;
   border: 2px solid darkgreen;
   border-radius: 15px;
-  margin: 15px auto 0 auto;
+  margin: 15px auto 1em auto;
   font-weight: bold;
   background-color: darkgreen;
   color: white;
-  height: 30px;
-  /* line-height: 30px; */
 }
 .submitButton:hover{
   background-color: lightgreen;
@@ -124,7 +126,6 @@ th{
   border-radius: 15px;
   margin: 10px auto 0 auto;
   font-weight: bold;
-  background-color: darkgreen;
   color: white;
   height: 30px;
   /* line-height: 30px; */
@@ -208,6 +209,11 @@ th{
   border-radius: 15px;
   text-align: justify;
 }
+.features {
+  height: 50%;
+  display: flex;
+  justify-items: center;
+}
 @media (max-width: 900px) {
   .mainText {
     width: 85vw;
@@ -215,11 +221,6 @@ th{
   .features {
     display: none;
   }
-}
-.features {
-  height: 50%;
-  display: flex;
-  justify-items: center;
 }
 .featureArticle {
   width: 50%;
