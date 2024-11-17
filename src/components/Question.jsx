@@ -20,7 +20,7 @@ function Question(props) {
         if (e.target.className === 'option'){
           props.setChosen(e.target.id)
         }
-        if (e.target.className === 'submitButton'){
+        if (e.target.className === 'submitButton' || e.target.id === 'answerInput'){
           props.setMode(2)
         }
       }

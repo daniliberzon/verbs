@@ -41,6 +41,11 @@ code {
   border: 2px solid darkgreen;
   background-color: lightgreen;
 }
+.option:focus {
+  outline: none !important;
+  border:2px solid #88ac88;
+  box-shadow: 0 0 10px #88ac88;
+}
 .verb{
   font-size: 30px;
   font-weight: bold;
@@ -70,6 +75,11 @@ code {
 .submitButton:hover{
   background-color: lightgreen;
   color: black;
+}
+.submitButton:focus {
+  outline: none !important;
+  border:3px solid #88ac88;
+  box-shadow: 0 0 10px #88ac88;
 }
 .chosen{
   border: 2px solid darkgreen;
@@ -168,7 +178,6 @@ th{
 .settingOption:hover{
   background-color: #88ac88;
 }
-
 
 .chosenSetting{
   background-color: #88ac88;
