@@ -5,7 +5,7 @@ import { readString } from 'react-papaparse';
 import Quiz from './Quiz';
 import { tenses, binyanim } from '../utils/utils';
 import Navigation from './Navigation';
-import { Box, Button, Grid, Heading } from '@chakra-ui/react';
+import { Box, Button, Grid, Heading, useMediaQuery } from '@chakra-ui/react';
 
 function QuizSettings() {
   const [data, setData]  = useState()
@@ -63,6 +63,8 @@ function QuizSettings() {
               e.target.style.background = 'lightseagreen'
   }}})}
   
+  const [isLargerThan900] = useMediaQuery('(min-width: 900px)');
+  const shadow = isLargerThan900 ? "xl" : "none";
 
   const menu = <div className='menu'>
                   <Box textAlign="left" bgColor="white">
@@ -72,7 +74,7 @@ function QuizSettings() {
                     </div>
                   </Box>
 
-                  <Box bgColor="white" boxShadow="xl" borderRadius="md" minH="60vh">
+                  <Box className="settingsCard" bgColor="white" boxShadow={shadow} borderRadius="md">
                     <Box as="section" className='settings'>
                       <Heading as="h2" size="md" align="center" w="100%">Choose test settings</Heading>
                       <div className='set tenses'>

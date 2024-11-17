@@ -34,13 +34,13 @@ function Question(props) {
             {props.options.map((x) =>{
                 let className = x==props.chosen ? 'option chosen' : 'option'
                 return(
-                    <div className={className} tabIndex="0" id={x} key={x}>{props.data[x][3]}</div>
+                    <div className={className} tabIndex="1" id={x} key={x}>{props.data[x][3]}</div>
                 )
             })}
         </div>
         <div className='question'>Type form: {decodeForm(props.columns[props.form][1])}</div>
-        <Input w="50%" fontSize="20px" borderColor="black" id='answerInput' dir='rtl' onChange={handleChange} value={props.answer} autoComplete='off' />
-        <div className='submitButton' tabIndex="0">Submit</div>
+        <Input tabIndex="1" w="50%" fontSize="20px" borderColor="black" id='answerInput' dir='rtl' onChange={handleChange} value={props.answer} autoComplete='off' />
+        <div className='submitButton' tabIndex="1">Submit</div>
     </div>
   )
 }
